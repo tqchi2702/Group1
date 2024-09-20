@@ -5,7 +5,7 @@
 - Member 1: Tran Que Chi 
 - Member 2: Tran Thi Kim Ngoc
 - Member 3: Dau Truc Linh
-- Member 4:Nguyen Thanh Binh 
+- Member 4: Nguyen Thanh Binh 
 
 ## Starting server
 
