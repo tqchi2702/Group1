@@ -1,0 +1,30 @@
+<%= form_with(model: order_dish) do |form| %>
+<% if order_dish.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(order_dish.errors.count, "error") %> prohibited this order_dish from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% order_dish.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :order_id, class: label_class %>
+          <%= form.text_field :order_id, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :dish_id, class: label_class %>
+          <%= form.text_field :dish_id, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if order_dish.persisted? %>
+<%= link_to "Cancel", order_dish, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", order_dishes_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>
